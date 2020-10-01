@@ -1,12 +1,31 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const app = require('express')();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
-const app = express();
-const PORT = 5000;
+app.get('/', (req, res) => {
+  // Create absolute path
+  res.sendFile(__dirname + '/public/index.html'); 
+});
 
-app.use(bodyParser.json());
-// require("./routes/userRoutes")(app);
+io.on('connection', (socket) => {
+  // Confirm user connection
+  console.log(`A user connected`);
 
-app.listen(PORT, () => {
-  console.log(`Server running`);
+  socket.on('connect', () => {
+    socket.broadcast.emit('A new user entered the chat');
+  })
+
+  // New message 
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+
+  // Socket disconnection
+  socket.on('disconnect', () => {
+    console.log(`User disconnected`);
+  });
+});
+
+http.listen(3000, () => {
+  console.log(`listening on *:3000`);
 });
