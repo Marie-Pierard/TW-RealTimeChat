@@ -1,0 +1,35 @@
+{
+  "name": "realtimechat",
+  "version": "1.0.0",
+  "description": "TeamWork@BeCode.org",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicode-io/TW-RealTimeChat.git"
+  },
+  "keywords": [
+    "chat",
+    "becode"
+  ],
+  "author": "M.Shmayssany, M.Pierard, JC.Brognez, N.Denoël",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicode-io/TW-RealTimeChat/issues"
+  },
+  "homepage": "https://github.com/nicode-io/TW-RealTimeChat#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "country-list": "^2.2.0",
+    "express": "^4.17.1",
+    "jsonfile": "^6.0.1",
+    "mongoose": "^5.10.7"
+  }
+}
