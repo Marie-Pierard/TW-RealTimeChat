@@ -1,5 +1,5 @@
-const express = require('express');
-const app = require('express')();
+const express = require('express'); 
+const app = require('express'); // Create Express app
 const http = require('http').Server(app);
 const io = require('socket.io')(http); 
 
@@ -19,20 +19,20 @@ app.use(express.static(__dirname + '/public'));
 //   nsp.emit("hi", "Hello everyone!");
 // });
 
-// var clients = 0;
-// io.on("connection", function (socket) {
-//   clients++;
-//   socket.emit("newclientconnect", { description: "Hey, welcome!" });
-//   socket.broadcast.emit("newclientconnect", {
-//     description: `${clients} clients connected!`,
-//   });
-//   socket.on("disconnect", function () {
-//     clients--;
-//     socket.broadcast.emit("newclientconnect", {
-//       description: `${clients} clients connected!`,
-//     });
-//   });
-// });
+var clients = 0;
+io.on("connection", function (socket) {
+  clients++;
+  socket.emit("newclientconnect", { description: "Hey, welcome!" });
+  socket.broadcast.emit("newclientconnect", {
+    description: `${clients} clients connected!`,
+  });
+  socket.on("disconnect", function () {
+    clients--;
+    socket.broadcast.emit("newclientconnect", {
+      description: `${clients} clients connected!`,
+    });
+  });
+});
 
 // var clients = 0;
 // // Executed at each new connection 

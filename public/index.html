@@ -20,20 +20,42 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Hello world</title>
-</head>
-<script src="/socket.io/socket.io.js"></script>
+    <head>
+        <title>Hello world</title>
+    </head>
+    <script src="/socket.io/socket.io.js"></script>
 
-<script>
-    var socket = io();
-    socket.on('connectToRoom', function (data) {
-        document.body.innerHTML = '';
-        document.write(data);
-    });
-</script>
+    <script>
+        // // Init socket
+        // var socket = io();
+        
+        // // 1. Send custom event from server to client
+        // socket.on('testerEvent', function (data) { 
+        //     document.body.innerHTML = '';
+        //     document.write(data.description) });
+        
+        // // 2. Send custom event from client to server
+        // socket.emit('clientEvent', 'Sent an event from the client!');
 
-<body></body>
+        // 3. Manage broadcast received from server
+        socket.on('broadcast', function (data) {
+            document.body.innerHTML = '';
+            document.write(data.description);
+        });
+        socket.on('customBroadcast', function (data) {
+            document.body.innerHTML = '';
+            document.write(data.description);
+        });
 
-</html>
+
+        // Another namespace
+        // var socket = io('/my-namespace');
+        //     socket.on('hi', function (data) {
+        //         document.body.innerHTML = '';
+        //         document.write(data);
+        // });
+    </script>
+
+    <body>Hello world</body>
+
 </html>
