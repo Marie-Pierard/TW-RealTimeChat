@@ -19,7 +19,7 @@ In this project, we have to make a real-time chat using Node.js, Express.js and 
 
 *   :star:[Mohamed Shmayssany](https://github.com/M-Shmayssany)
 *   :star:[Marie Pierard](https://github.com/Marie-Pierard) 
-*   :star:[Jean-Claude Brognez](https://github.com/jcbrognez)
+*   :star:[Jean-Charles Brognez](https://github.com/jcbrognez)
 *   :star:[Nicolas Denoël](https://github.com/nicode-io)
 
 ---
