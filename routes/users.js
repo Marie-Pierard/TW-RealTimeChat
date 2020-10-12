@@ -13,11 +13,15 @@ module.exports = (app, dir, db, io, session)=>{
             chat.user = msg.name;
             chat.date = new Date();
             chat.message = msg.message;
-            debugger;
-            chat.save( function(err){
-                if (err) { console.error(err) }
-                console.log('save');
-            })
+            console.log(chat);
+            try {
+            chat.save(function(err, doc) {
+                if (err) return console.error(err);
+                console.log("Document inserted succussfully!");
+            });
+            } catch(err) {
+                console.log(err);
+            }
             console.log(msg.name + ' message: ' + msg.message);
             
             
@@ -39,7 +43,7 @@ module.exports = (app, dir, db, io, session)=>{
         const result = await collection.findOne({'email':user.email},(err, doc)=>{
             if(err) throw err;
             console.log(doc);
-            db.close();
+            
             if(!doc){
                 console.log('The user is not register');
                 res.redirect('/login');
@@ -49,6 +53,7 @@ module.exports = (app, dir, db, io, session)=>{
                     sess.fullname = doc.fullname;
                     sess.email = doc.email;
                     res.redirect('/');
+                    
                 }else{
                     console.log('incorrect password ' + user.password);
                     res.redirect('/login');
