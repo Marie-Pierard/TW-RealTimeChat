@@ -1,36 +1,25 @@
 {
-  "name": "realtimechat",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "TeamWork@BeCode.org",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nicode-io/TW-RealTimeChat.git"
-  },
-  "keywords": [
-    "chat",
-    "becode"
-  ],
-  "author": "M.Shmayssany, M.Pierard, JC.Brognez, N.Denoël",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nicode-io/TW-RealTimeChat/issues"
-  },
-  "homepage": "https://github.com/nicode-io/TW-RealTimeChat#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    "axios": "^0.20.0",
-    "bluebird": "^3.7.2",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "http": "0.0.1-security",
-    "mongoose": "^5.10.7",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "mongoose-unique-validator": "^2.0.3",
     "socket.io": "^2.3.0"
   }
 }

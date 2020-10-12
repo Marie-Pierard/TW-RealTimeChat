@@ -31,15 +31,18 @@ In this project, we have to make a real-time chat using Node.js, Express.js and 
 *   Allow for different user at the same time
 *   Keep messages after reloading the page
 
-
 ---
 
 ### Techno Used
 
 *   Node.js
-*   Express.js
-*   Socket.IO
-*   NPM 
+*   NPM Packages : 
+    *   Bcrypt
+    *   Express
+    *   Jsonwebtoken
+    *   Mongoose
+    *   Mongoose-unique-validator
+    *   Socket.IO
 
 ---
 
