@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/user.css">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Register page</h1>
+        <form method="POST" class="login" action="">
+            <section>
+                <div>
+                    <label for="fullname">Full Name</label><br/>
+                    <label for="email">E-mail</label><br/>
+                    <label for="password">Password</label><br/>
+                    <label for="repass">Renter Password</label>
+                </div>
+                <div>
+                    <input name="fullname" id="fullname" type="text" /><br/>
+                    <input name="email" id="email" type="text" /><br/>
+                    <input name="password" id="password" type="password" /><br/>
+                    <input type="password" id="repass"/>
+                </div>
+            </section>
+            <div>
+                <button class="submit" type="submit">Register</button><br/>
+                <button type="reset">Reset</button><br/>
+                <a href="/login">Login</a> 
+            </div>
+        </form>
+    <script>
+        let fullname = document.getElementById('fullname');
+        let email = document.getElementById('email');
+        let pass = document.getElementById('password');
+        let repass = document.getElementById('repass');
+        let submit = document.getElementsByClassName("submit")[0];
+        submit.disabled = true;
+        repass.addEventListener('keyup', ()=>{
+            if(pass.value != repass.value){
+                console.log('is not eqwal');
+                repass.style.boxShadow = "3px 5px 7px red";
+                submit.disabled = true;
+                
+            }else{
+                console.log('is ok');
+                repass.style.boxShadow = "none";
+                submit.disabled = false;
+            }
+        });
+
+    </script>
+</body>
+</html>
