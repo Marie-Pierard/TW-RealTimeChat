@@ -9,9 +9,12 @@ In this project, we have to make a real-time chat using Node.js, Express.js and 
 
 ###  Index
 
--   [Collaborators](#collaborators)
--   [Main Goals](#main-goals)
--   [Techno Used](#techno-used)
+- [(◉ ͜ʖ◉))ﾉ彡 REAL TIME CHAT ✧٩(•́⌄•́๑)](#-͜ʖﾉ彡-real-time-chat-٩́́๑)
+    - [Description](#description)
+    - [Index](#index)
+    - [Collaborators](#collaborators)
+    - [Main goals](#main-goals)
+    - [Techno Used](#techno-used)
 
 ---
 
@@ -19,7 +22,7 @@ In this project, we have to make a real-time chat using Node.js, Express.js and 
 
 *   :star:[Mohamed Shmayssany](https://github.com/M-Shmayssany)
 *   :star:[Marie Pierard](https://github.com/Marie-Pierard) 
-*   :star:[Jean-Claude Brognez](https://github.com/jcbrognez)
+*   :star:[Jean-Charles Brognez](https://github.com/jcbrognez)
 *   :star:[Nicolas Denoël](https://github.com/nicode-io)
 
 ---
