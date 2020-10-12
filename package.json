@@ -20,7 +20,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9",
     "mongoose-unique-validator": "^2.0.3",
-    "multer": "^1.4.2",
     "socket.io": "^2.3.0"
   }
 }
