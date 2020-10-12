@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Real Time Chat</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <ul id="messages"></ul>
+        <form action="">
+            <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/script.js"></script>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Hello world</title>
+    </head>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        // // Init socket
+        // var socket = io();
+        
+        // // 1. Send custom event from server to client
+        // socket.on('testerEvent', function (data) { 
+        //     document.body.innerHTML = '';
+        //     document.write(data.description) });
+        
+        // // 2. Send custom event from client to server
+        // socket.emit('clientEvent', 'Sent an event from the client!');
+
+        // 3. Manage broadcast received from server
+        socket.on('broadcast', function (data) {
+            document.body.innerHTML = '';
+            document.write(data.description);
+        });
+        socket.on('customBroadcast', function (data) {
+            document.body.innerHTML = '';
+            document.write(data.description);
+        });
+
+
+        // Another namespace
+        // var socket = io('/my-namespace');
+        //     socket.on('hi', function (data) {
+        //         document.body.innerHTML = '';
+        //         document.write(data);
+        // });
+    </script>
+
+    <body>Hello world</body>
+
+</html>
