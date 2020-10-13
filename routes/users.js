@@ -27,9 +27,21 @@ module.exports = (app, dir, db, io, session)=>{
             
         });
     });
-    app.get("/", (req, res) => {
+    app.get("/", async (req, res) => {
         fullname = req.session.fullname;
-        res.render('home', { fullname: fullname, message: "its working" })
+        if(fullname){
+            const chat = new Chatmessage();
+            const collection = db.collection("chatmessages");
+            const result = await collection.find({},(err, chatmessage)=>{
+                if(err){
+                    console.log(err);
+                } else{
+                    res.render('home', { fullname: fullname, data: [chatmessage] });
+                }
+            });
+        }else{
+            res.redirect('/login');
+        }
     });
         
     app.get("/login", (req, res) => {

@@ -11,7 +11,7 @@ const curDir = __dirname;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({secret: 'ssshhhhh'}));
-mongoose.connect('mongodb://admin:mkahms@localhost:27017/chat?authSource=admin', {
+mongoose.connect('mongodb+srv://mohamed:mkahms@cluster0.cz5k7.mongodb.net/chat-app?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
